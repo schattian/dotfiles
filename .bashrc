@@ -152,13 +152,17 @@ unset file
 eval "$(lua ~/.z.lua/z.lua --init bash enhanced once)"
 export _ZL_ECHO=1
 
-source $HOME/.we-autocompletion.sh
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+DOCKER_CONTENT_TRUST=0
+export PATH="/home/schattian/.local/bin:$PATH"
 
-complete -C $GOPATH/bin/gocomplete go
 
-source $HOME/.dutils
+# Created by `pipx` on 2022-05-10 19:42:49
+export PATH="$PATH:/home/schattian/.local/bin"
 
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-. "$HOME/.cargo/env"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/schattian/binpath/google-cloud-sdk/path.bash.inc' ]; then . '/home/schattian/binpath/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/schattian/binpath/google-cloud-sdk/completion.bash.inc' ]; then . '/home/schattian/binpath/google-cloud-sdk/completion.bash.inc'; fi

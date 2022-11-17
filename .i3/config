@@ -23,7 +23,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # Hotkeys
-bindsym $mod+F1 exec vivaldi
+bindsym $mod+F1 exec google-chrome-stable 
 bindsym $mod+F3 exec spotify
 bindsym $mod+F4 exec slack
 bindsym $mod+F5 exec code
@@ -206,6 +206,7 @@ bindsym $mod+r mode "resize"
 
 # i3status bar config
 bar {
+    tray_output none 
     position top
     font pango:monospace 8
     status_command $barcmd --config ~/.i3/status.conf
